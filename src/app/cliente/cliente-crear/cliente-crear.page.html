@@ -1,20 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>clienteCrear</ion-title>
+    <ion-title>Creacion de usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h2>Registro de usuario</h2>
+  <br>
+  <div class="ion-text-center">
+    <h2 class="position-relative">Registro de usuario</h2>
+  </div>
   <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
-      <div class="mb-3">
-          <label class="form-label">Email</label>
+      <div class="mb-3 container">
+          <label class="form-label mx-auto p-2">Email</label>
           <input type="text" class="form-control" formControlName="email">
       </div>
-      <div class="mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" formControlName="password">
+      <div class="mb-3 container">
+          <label class="form-label mx-auto p-2">Password</label>
+          <input type="password" class="form-control container" formControlName="password">
       </div>
-      <input type="submit" value="Enviar">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-md="6">
+          <ion-button expand="full" color="primary" type="submit" value="Enviar">Enviar</ion-button>
+        </ion-col>
+      </ion-row>
   </form>
 </ion-content>
