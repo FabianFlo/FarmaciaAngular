@@ -22,6 +22,15 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule), ...canActivate(()=> redirectUnauthorizedTo(['cliente-crear']))
   },
+  {
+    path: 'cliente-delete',
+    loadChildren: () => import('./cliente/cliente-delete/cliente-delete.module').then( m => m.ClienteDeletePageModule)
+  },
+  {
+    path: 'cliente-modificar',
+    loadChildren: () => import('./cliente/cliente-modificar/cliente-modificar.module').then( m => m.ClienteModificarPageModule)
+  },
+
 
 ];
 
