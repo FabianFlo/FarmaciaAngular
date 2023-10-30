@@ -13,7 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ClienteCrearPage implements OnInit {
 
   formReg: FormGroup;
-
+///Aqui llamamos a las alarmas y a los servicios de usario
   constructor(private userService: UserService,
               private router: Router,
               public alertController: AlertController
@@ -23,7 +23,7 @@ export class ClienteCrearPage implements OnInit {
       password: new FormControl()
     })
   }
-
+///Aqui es donde se suben los datos
   onSubmit(){
     this.userService.register(this.formReg.value)
       .then(async response => {
