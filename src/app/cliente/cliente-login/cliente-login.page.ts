@@ -65,48 +65,5 @@ export class ClienteLoginPage implements OnInit {
       .catch((error) => console.log(error));
   }
 
-  async resetPassword() {
-    const alert = await this.alertController.create({
-      header: 'Restablecer Contraseña',
-      message: 'Ingrese su correo electrónico para restablecer la contraseña',
-      inputs: [
-        {
-          name: 'email',
-          type: 'email',
-          placeholder: 'Correo Electrónico',
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-        },
-        {
-          text: 'Enviar',
-          handler: async (data) => {
-            if (data.email) {
-              try {
-                await this.userService.resetPassword(data.email);
-                const successAlert = await this.alertController.create({
-                  header: 'Éxito',
-                  message: 'Se ha enviado un correo para restablecer la contraseña.',
-                  buttons: ['OK'],
-                });
-                await successAlert.present();
-              } catch (error) {
-                const errorAlert = await this.alertController.create({
-                  header: 'Error',
-                  message: 'No se pudo restablecer la contraseña. Verifique su correo electrónico.',
-                  buttons: ['OK'],
-                });
-                await errorAlert.present();
-              }
-            }
-          },
-        },
-      ],
-    });
 
-    await alert.present();
-  }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
-import { User, sendPasswordResetEmail } from 'firebase/auth'; // Importa sendPasswordResetEmail
+import { User } from 'firebase/auth'; // Importa sendPasswordResetEmail
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,4 @@ export class UserService {
     return this.auth.currentUser;
   }
 
-  resetPassword(email: string) {
-    return sendPasswordResetEmail(this.auth, email); // Utiliza sendPasswordResetEmail para restablecer la contraseña
-  }
 }
