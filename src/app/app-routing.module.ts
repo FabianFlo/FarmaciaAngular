@@ -18,6 +18,7 @@ const routes: Routes = [
     path: 'cliente-login',
     loadChildren: () => import('./cliente/cliente-login/cliente-login.module').then( m => m.ClienteLoginPageModule)
   },
+  ///Aqui esta el routing guard
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule), ...canActivate(()=> redirectUnauthorizedTo(['cliente-crear']))
