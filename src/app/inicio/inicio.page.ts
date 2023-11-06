@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
+import { MiServicioPokemonService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-inicio',
@@ -32,3 +33,4 @@ export class InicioPage implements OnInit {
     console.log('Correo del usuario:', this.email);
   }
 }
+

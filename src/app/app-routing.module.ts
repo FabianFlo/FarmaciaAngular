@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'cliente-modificar',
     loadChildren: () => import('./cliente/cliente-modificar/cliente-modificar.module').then( m => m.ClienteModificarPageModule)
+  },  {
+    path: 'pokemon',
+    loadChildren: () => import('./pokemon/pokemon.module').then( m => m.PokemonPageModule)
   },
+
 
 
 ];
