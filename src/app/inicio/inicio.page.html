@@ -1,13 +1,49 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-title>INICIO</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"><ion-icon name="home" size="large" ></ion-icon></ion-menu-button>
+    </ion-buttons>
+    <ion-button color="light" id="popover-button" slot="end"><ion-icon name="person"></ion-icon></ion-button>
+<ion-popover trigger="popover-button" [dismissOnSelect]="true">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item [button]="true" [detail]="false">Perfil</ion-item>
+        <ion-item [button]="true" [detail]="false" (click)="logout()">Cerrar Sesion</ion-item>
 
-<ion-content [fullscreen]="true">
-  <h1>Página principal</h1>
-  <div>
-    <p>Correo del usuario: {{ email }}</p>
+        <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="end">
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                <ion-item [button]="true" [detail]="false">Nested option</ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+<ion-button slot="end"><ion-icon name="cart-outline"></ion-icon></ion-button>
+   </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" color="dark">
+<ion-grid>
+  <ion-row style="display: flex; place-content: center;">
+    <div>
+      <ion-card style="background-color: pink;">
+      <ion-card-header>
+        <ion-card-title><h1 style="text-align: center;">Bienvenido</h1></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h3 style="width: max-content;">{{ email }}</h3>
+      </ion-card-content>
+    </ion-card>
   </div>
-<button (click)="onClick()" class="btn btn-outline-danger mt-5">Logout</button>
+  </ion-row>
+</ion-grid>
+  <div>
+
+  </div>
 </ion-content>

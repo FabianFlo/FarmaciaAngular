@@ -17,7 +17,7 @@ export class InicioPage implements OnInit {
     this.getUserEmail();
   }
 
-  onClick() {
+  logout() {
     this.userService.logOut()
       .then(() => {
         this.router.navigate(['cliente-crear']);
