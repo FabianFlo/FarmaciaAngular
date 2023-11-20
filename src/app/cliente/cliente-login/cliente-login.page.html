@@ -1,26 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>clienteLogin</ion-title>
+  <ion-toolbar color="light">
+    <ion-title>INICIO DE SESION</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"><ion-icon name="person" size="large" ></ion-icon></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="dark">
   <br>
   <div class="ion-text-center">
     <h2 class="position-relative">Login de usuario</h2>
   </div>
 <form [formGroup]="formlogin" (ngSubmit)="onSubmit()">
     <div class="mb-3 container">
-        <label class="form-label mx-auto p-2">Email</label>
+        <label class="form-label mx-auto p-2"><ion-icon name="mail-outline"></ion-icon>  Correo electronico</label>
         <input type="text" class="form-control" formControlName="email">
     </div>
     <div class="mb-3 container">
-        <label class="form-label mx-auto p-2">Password</label>
+        <label class="form-label mx-auto p-2"><ion-icon name="lock-closed-outline"></ion-icon>  Contraseña</label>
         <input type="password" class="form-control" formControlName="password">
     </div>
-    <ion-row class="ion-justify-content-center">
-      <ion-col size="12" size-md="6">
-        <ion-button expand="full" color="primary" type="submit" value="Enviar">Enviar</ion-button>
+    <ion-row class="ion-center">
+      <ion-col size="12" size-md="6" style="text-align: -webkit-center;">
+        <ion-button expand="full" color="primary" type="submit" value="Enviar" style="width: 100px; border-radius: 5px;">Enviar</ion-button>
     </ion-col>
   </ion-row>
 
