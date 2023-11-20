@@ -25,7 +25,7 @@
     </ion-content>
   </ng-template>
 </ion-popover>
-<ion-button slot="end"><ion-icon name="cart-outline"></ion-icon></ion-button>
+<ion-button slot="end" href="productos"><ion-icon name="cart-outline"></ion-icon></ion-button>
    </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" color="dark">
@@ -43,7 +43,9 @@
   </div>
   </ion-row>
 </ion-grid>
-  <div>
-
-  </div>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="email === 'si@si.si'">
+  <ion-fab-button (click)="addUpdateProduct()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 </ion-content>

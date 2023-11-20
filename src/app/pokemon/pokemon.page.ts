@@ -4,6 +4,7 @@ import { MiServicioPokemonService } from '../services/user.service';
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.page.html',
+  
 })
 export class PokemonPage implements OnInit {
   pokemon: any = null; // Propiedad para almacenar los datos del pokemon
