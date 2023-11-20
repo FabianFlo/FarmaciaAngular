@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FarmaciaApp</string>
+    <string name="title_activity_main">FarmaciaApp</string>
+    <string name="package_name">com.farmacia.app</string>
+    <string name="custom_url_scheme">com.farmacia.app</string>
+</resources>
