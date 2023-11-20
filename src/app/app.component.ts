@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'inicio', url: '/inicio', icon: 'home' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
+    { title: 'Inicio', url: '/inicio', icon: 'home' },
+    { title: 'Productos', url: '/productos', icon: 'cart' },
     { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
     { title: 'Archived', url: '/folder/archived', icon: 'archive' },
     { title: 'Trash', url: '/folder/trash', icon: 'trash' },

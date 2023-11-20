@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
+
 const routes: Routes = [
   {
     path: '', redirectTo: 'inicio', pathMatch: 'full'
@@ -24,12 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule), ...canActivate(()=> redirectUnauthorizedTo(['cliente-crear']))
   },
   {
-    path: 'cliente-modificar',
-    loadChildren: () => import('./cliente/cliente-modificar/cliente-modificar.module').then( m => m.ClienteModificarPageModule)
-  },  {
     path: 'pokemon',
     loadChildren: () => import('./pokemon/pokemon.module').then( m => m.PokemonPageModule)
   },
+  
 
 
 
@@ -39,6 +38,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  declarations:[]
 })
 export class AppRoutingModule {}

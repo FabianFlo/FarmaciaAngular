@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
-import { MiServicioPokemonService } from 'src/app/services/user.service';
+import { ProductoService } from '../services/producto.service';
+import { AddUpdateProductComponent } from '../add-update-product/add-update-product.component';
+
 
 @Component({
   selector: 'app-inicio',
@@ -11,7 +13,7 @@ import { MiServicioPokemonService } from 'src/app/services/user.service';
 export class InicioPage implements OnInit {
   email: string | null = null;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router,private prodServi: ProductoService) { }
 
   ngOnInit() {
     this.getUserEmail();
@@ -31,6 +33,12 @@ export class InicioPage implements OnInit {
     const user: User | null = await this.userService.getUserProfile();
     this.email = user?.email || null;
     console.log('Correo del usuario:', this.email);
+  }
+  
+  addUpdateProduct(){
+    this.prodServi.presentModal({
+      component: AddUpdateProductComponent
+    })
   }
 }
 
