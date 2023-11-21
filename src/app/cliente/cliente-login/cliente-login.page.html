@@ -3,7 +3,9 @@
     <ion-title>INICIO DE SESION</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button color="dark"><ion-icon name="person" size="large" ></ion-icon></ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
@@ -29,6 +31,6 @@
 
   </form>
   <div class="ion-text-center">
-  <button class="btn btn-info"(click)="onClick()">Login With Google</button>
+  <button class="btn btn-success"(click)="onClick()"><ion-icon name="logo-google"></ion-icon> Iniciar con Google</button>
   </div>
 </ion-content>
