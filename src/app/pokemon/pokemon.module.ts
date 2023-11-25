@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { PokemonPageRoutingModule } from './pokemon-routing.module';
-
 import { PokemonPage } from './pokemon.page';
+
 import { MiServicioPokemonService } from '../services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     PokemonPageRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   declarations: [PokemonPage],
   providers: [MiServicioPokemonService]

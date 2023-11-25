@@ -65,9 +65,17 @@ export class MiServicioPokemonService {
 
   constructor(private http: HttpClient) { }
 
+  // Método para obtener la lista de Pokémon
+  obtenerListaPokemon(): Observable<any> {
+    return this.http.get(`${this.baseUrl}?limit=151`); // Puedes ajustar el límite según tus necesidades
+  }
+
   // Método para obtener información de un Pokémon por su nombre
   obtenerPokemon(nombre: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${nombre}`);
+  }
+  obtenerEstadisticasPokemon(url: string): Observable<any> {
+    return this.http.get(url);
   }
 }
 
