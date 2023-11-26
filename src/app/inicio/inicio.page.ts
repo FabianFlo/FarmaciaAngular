@@ -3,7 +3,7 @@ import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
 import { ProductoService } from '../services/producto.service';
-import { ProductosPage } from '../productos/productos.page';
+import { AgregarProductosPage } from '../productos/agregar-productos/agregar-productos.page';
 
 
 @Component({
@@ -37,7 +37,7 @@ export class InicioPage implements OnInit {
   
   addUpdateProduct(){
     this.prodServi.presentModal({
-      component: ProductosPage
+      component: AgregarProductosPage
     })
   }
 }

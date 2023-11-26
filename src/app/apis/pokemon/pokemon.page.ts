@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MiServicioPokemonService } from '../services/user.service';
-import { NavController } from '@ionic/angular';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+import { MiServicioPokemonService } from '../../services/user.service';
+import { NavController, IonContent  } from '@ionic/angular';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,12 @@ export class PokemonPage implements OnInit {
   pokemonForm: FormGroup; // Nuevo formulario
   listaPokemon: any[] = []; // Propiedad para almacenar la lista de Pokémon
   nombrePokemon: string = ''; // Nueva propiedad para almacenar el nombre del Pokémon a buscar
+
+  @ViewChild(IonContent) content!: IonContent;
+
+  scrollToTop() {
+    this.content.scrollToTop();
+  }
 
   constructor(
     private miServicioPokemon: MiServicioPokemonService,

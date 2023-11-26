@@ -26,11 +26,17 @@ const routes: Routes = [
   },
   {
     path: 'pokemon',
-    loadChildren: () => import('./pokemon/pokemon.module').then( m => m.PokemonPageModule)
+    loadChildren: () => import('./apis/pokemon/pokemon.module').then( m => m.PokemonPageModule)
   },  {
-    path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+    path: 'agregar-productos',
+    loadChildren: () => import('./productos/agregar-productos/agregar-productos.module').then( m => m.AgregarProductosPageModule)
   },
+  {
+    path: 'listar-productos',
+    loadChildren: () => import('./productos/listar-productos/listar-productos.module').then( m => m.ListarProductosPageModule)
+  },
+
+  
 
   
 

@@ -21,6 +21,9 @@
 
   <ion-card *ngIf="pokemon">
     <ion-card-content>
+      <ion-card-title>
+        {{ pokemon.name | titlecase }}
+      </ion-card-title>
       <ion-grid>
         <ion-row>
           <ion-col size="12" class="ion-text-center">
@@ -30,9 +33,6 @@
         <ion-row>
           <ion-col size="12">
             <ion-list>
-              <ion-item>
-                <ion-label>{{ pokemon.name | titlecase }}</ion-label>
-              </ion-item>
               <ion-item *ngFor="let stat of pokemon.stats">
                 {{ stat.stat.name | titlecase }}: {{ stat.base_stat }}
               </ion-item>
@@ -46,6 +46,9 @@
   <!-- Mostrar la lista de Pokémon -->
   <ion-card *ngFor="let pokemon of listaPokemon">
     <ion-card-content>
+      <ion-card-title>
+        {{ pokemon.name | titlecase }}
+      </ion-card-title>
       <ion-grid>
         <ion-row>
           <ion-col size="12" class="ion-text-center">
@@ -55,9 +58,6 @@
         <ion-row>
           <ion-col size="12">
             <ion-list>
-              <ion-item>
-                <ion-label>{{ pokemon.name | titlecase }}</ion-label>
-              </ion-item>
               <ion-item *ngFor="let stat of pokemon.stats">
                 {{ stat.stat.name | titlecase }}: {{ stat.base_stat }}
               </ion-item>
@@ -67,4 +67,10 @@
       </ion-grid>
     </ion-card-content>
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="scrollToTop()">
+    <ion-fab-button>
+      <ion-icon name="arrow-up"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
