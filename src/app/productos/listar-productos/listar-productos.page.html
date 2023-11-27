@@ -8,20 +8,29 @@
 <!-- listar-productos.component.html -->
 
 <ion-grid>
-  <ion-row *ngFor="let producto of productos">
-    <ion-col size="6" *ngFor="let producto of productos">
+  <ion-row>
+    <ion-col *ngFor="let producto of productos">
       <ion-card>
         <ion-card-header>
           <ion-card-title>{{ producto.nombre }}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <p>{{ producto.descripcion }}</p>
-          <p>Precio: ${{ producto.precio }}</p> <!-- Agregando el signo $ aquí -->
+          <p>Precio: ${{ producto.precio }}</p>
           <p>Cantidad: {{ producto.cantidad }}</p>
         </ion-card-content>
+        <ion-footer class="ion-text-center" > <!-- Aplicar la clase para centrar -->
+          <ion-button color="danger" *ngIf="puedeEliminarProducto(producto)"  (click)="eliminarProducto(producto.id)" size="small">
+            Eliminar
+          </ion-button>
+          
+        </ion-footer>
+        <br>
       </ion-card>
     </ion-col>
   </ion-row>
 </ion-grid>
+
+
 
 </ion-content>
