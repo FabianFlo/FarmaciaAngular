@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-listar-productos',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-productos.page.scss'],
 })
 export class ListarProductosPage implements OnInit {
+  productos: any[];
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
 
   ngOnInit() {
+    this.obtenerProductos();
+  }
+
+  obtenerProductos() {
+    this.firestore
+      .collection('productos')
+      .valueChanges()
+      .subscribe((data) => {
+        this.productos = data;
+      });
   }
 
 }

@@ -5,5 +5,23 @@
     </ion-buttons>
 </ion-toolbar>
 <ion-content [fullscreen]="true">
+<!-- listar-productos.component.html -->
+
+<ion-grid>
+  <ion-row *ngFor="let producto of productos">
+    <ion-col size="6" *ngFor="let producto of productos">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ producto.nombre }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ producto.descripcion }}</p>
+          <p>Precio: ${{ producto.precio }}</p> <!-- Agregando el signo $ aquí -->
+          <p>Cantidad: {{ producto.cantidad }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
 </ion-content>
